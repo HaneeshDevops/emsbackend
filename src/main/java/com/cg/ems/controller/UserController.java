@@ -20,7 +20,7 @@ import com.cg.ems.service.UserService;
 import jakarta.annotation.PostConstruct;
 import jakarta.validation.Valid;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "http://frontend-container:4200")
 @RestController
 
 //@RequestMapping("/api/users")
