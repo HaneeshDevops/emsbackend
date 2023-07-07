@@ -35,25 +35,6 @@
 			<version>5.2.4.Final</version>
 		</dependency> 
 
-
-
-
-
-
-
-<dependency>
-
-<groupId>org.sonarsource.scanner.maven</groupId>
-
-<artifactId>sonar-maven-plugin</artifactId>
-
-<version>3.2</version>
-
-</dependency>
-
-
-
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -124,31 +105,9 @@
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
 		</dependency>
-        <dependency>
-<groupId>org.sonarsource.scanner.maven</groupId>
-<artifactId>sonar-maven-plugin</artifactId>
-<version>3.2</version>
-</dependency>
-
-
-
-
-	</dependencies>
+        
+	</dependencies>	
 	
-	
-<profiles>
-<profile>
-<id>sonar</id>
-<activation>
-<activeByDefault>true</activeByDefault>
-</activation>
-<properties>
-<sonar.host.url>http://localhost:9000</sonar.host.url>
-<sonar.login>2d59d62840c64a394b5ef4a6dc899902b157c969</sonar.login>
-</properties>
-</profile>
-</profiles>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -163,7 +122,32 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+<groupId>org.sonarsource.scanner.maven</groupId>
+<artifactId>sonar-maven-plugin</artifactId>
+<version>3.9.0.2155</version>
+</plugin>
+<plugin>
+<groupId>org.jacoco</groupId>
+<artifactId>jacoco-maven-plugin</artifactId>
+<version>0.8.7</version>
+<executions>
+<execution>
+<id>prepare-agent</id>
+<goals>
+<goal>prepare-agent</goal>
+</goals>
+</execution>
+<execution>
+<id>report</id>
+<goals>
+<goal>report</goal>
+</goals>
+</execution>
+</executions>
+</plugin>			
 		</plugins>
 	</build>
-
 </project>
+
