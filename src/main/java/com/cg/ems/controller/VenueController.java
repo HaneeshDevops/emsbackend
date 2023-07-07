@@ -21,7 +21,7 @@ import com.cg.ems.service.VenueService;
 
 import jakarta.validation.Valid;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://frontend-container:4200")
 @RestController
 @RequestMapping("/api")
 public class VenueController {
